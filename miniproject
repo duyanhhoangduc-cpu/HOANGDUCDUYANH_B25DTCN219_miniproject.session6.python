@@ -35,24 +35,24 @@ while True:
             so_luong = int(input("Nhập số lượng cần thêm: "))
 
             if so_luong < 0:
-                print("Số lượng không hợp lệ, vui lòng nhập lại!")
+                print("Số lượng ko hợp lệ, vui lòng nhập lại")
             else:
                 break
 
         if san_pham == "1":
             so_luong_laptop += so_luong
-            print("Đã nhập Laptop thành công!")
+            print("Đã nhập Laptop thành công")
 
         elif san_pham == "2":
             so_luong_dien_thoai += so_luong
-            print("Đã nhập Điện thoại thành công!")
+            print("Đã nhập Điện thoại thành công")
 
         elif san_pham == "3":
             so_luong_may_tinh_bang += so_luong
-            print("Đã nhập Máy tính bảng thành công!")
+            print("Đã nhập Máy tính bảng thành công")
 
         else:
-            print("Sản phẩm không hợp lệ!")
+            print("Sản phẩm ko hợp lệ!")
 
     elif lua_chon == "3":
         print("\n--- XUẤT KHO ---")
@@ -63,29 +63,29 @@ while True:
         while True:
             so_luong = int(input("Nhập số lượng cần xuất: "))
             if so_luong < 0:
-                print("Số lượng không hợp lệ, vui lòng nhập lại!")
+                print("Số lượng ko hợp lệ, vui lòng nhập lại!")
             else:
                 break
         if san_pham == "1":
             if so_luong > so_luong_laptop:
-                print("Không đủ hàng!")
+                print("Ko đủ hàng!")
             else:
                 so_luong_laptop -= so_luong
                 print("Xuất Laptop thành công!")
         elif san_pham == "2":
             if so_luong > so_luong_dien_thoai:
-                print("Không đủ hàng")
+                print("Ko đủ hàng")
             else:
                 so_luong_dien_thoai -= so_luong
                 print("Xuất Điện thoại thành công!")
         elif san_pham == "3":
             if so_luong > so_luong_may_tinh_bang:
-                print("Không đủ hàng!")
+                print("Ko đủ hàng!")
             else:
                 so_luong_may_tinh_bang -= so_luong
                 print("Xuất Máy tính bảng thành công")
         else:
-            print("Sản phẩm không hợp lệ!")
+            print("Sản phẩm ko hợp lệ!")
     elif lua_chon == "4":
         print("\n--- CẢNH BÁO TỒN KHO---")
         if so_luong_laptop < 10:
@@ -98,4 +98,4 @@ while True:
         print("Thoát chương trình...")
         break
     else:
-        print("Lựa chọn không hợp lệ, vui lòng nhập lại!")
+        print("Lựa chọn ko hợp lệ, vui lòng nhập lại!")
