@@ -1,0 +1,101 @@
+so_luong_laptop = 0
+so_luong_dien_thoai = 0
+so_luong_may_tinh_bang = 0
+while True:
+    print("\n---- MENU ----")
+    print("1. Xem báo cáo tồn kho")
+    print("2. Nhập kho")
+    print("3. Xuất kho")
+    print("4. Cảnh báo hàng tồn kho thấp")
+    print("5. Thoát chương trình")
+    lua_chon = input("Chọn chức năng: ")
+    if lua_chon == "1":
+        print("\n BÁO CÁO TỒN KHO ")
+        print(f"Laptop ({so_luong_laptop}): ", end="")
+        for i in range(so_luong_laptop):
+            print("*", end="")
+        print()
+        print(f"Điện thoại ({so_luong_dien_thoai}): ", end="")
+        for i in range(so_luong_dien_thoai):
+            print("*", end="")
+        print()
+        print(f"Máy tính bảng ({so_luong_may_tinh_bang}): ", end="")
+        for i in range(so_luong_may_tinh_bang):
+            print("*", end="")
+        print()
+    elif lua_chon == "2":
+        print("\n--- NHẬP KHO ---")
+        print("1. Laptop")
+        print("2. Điện thoại")
+        print("3. Máy tính bảng")
+
+        san_pham = input("Chọn sản phẩm: ")
+
+        while True:
+            so_luong = int(input("Nhập số lượng cần thêm: "))
+
+            if so_luong < 0:
+                print("Số lượng không hợp lệ, vui lòng nhập lại!")
+            else:
+                break
+
+        if san_pham == "1":
+            so_luong_laptop += so_luong
+            print("Đã nhập Laptop thành công!")
+
+        elif san_pham == "2":
+            so_luong_dien_thoai += so_luong
+            print("Đã nhập Điện thoại thành công!")
+
+        elif san_pham == "3":
+            so_luong_may_tinh_bang += so_luong
+            print("Đã nhập Máy tính bảng thành công!")
+
+        else:
+            print("Sản phẩm không hợp lệ!")
+
+    elif lua_chon == "3":
+        print("\n--- XUẤT KHO ---")
+        print("1. Laptop")
+        print("2. Điện thoại")
+        print("3. Máy tính bảng")
+        san_pham = input("Chọn sản phẩm: ")
+        while True:
+            so_luong = int(input("Nhập số lượng cần xuất: "))
+            if so_luong < 0:
+                print("Số lượng không hợp lệ, vui lòng nhập lại!")
+            else:
+                break
+        if san_pham == "1":
+            if so_luong > so_luong_laptop:
+                print("Không đủ hàng!")
+            else:
+                so_luong_laptop -= so_luong
+                print("Xuất Laptop thành công!")
+        elif san_pham == "2":
+            if so_luong > so_luong_dien_thoai:
+                print("Không đủ hàng")
+            else:
+                so_luong_dien_thoai -= so_luong
+                print("Xuất Điện thoại thành công!")
+        elif san_pham == "3":
+            if so_luong > so_luong_may_tinh_bang:
+                print("Không đủ hàng!")
+            else:
+                so_luong_may_tinh_bang -= so_luong
+                print("Xuất Máy tính bảng thành công")
+        else:
+            print("Sản phẩm không hợp lệ!")
+    elif lua_chon == "4":
+        print("\n--- CẢNH BÁO TỒN KHO---")
+        if so_luong_laptop < 10:
+            print(f"Laptop sắp hết còn {so_luong_laptop} sản phẩm)")
+        if so_luong_dien_thoai < 10:
+            print(f"Điện thoại sắp hết còn {so_luong_dien_thoai} sản phẩm)")
+        if so_luong_may_tinh_bang < 10:
+            print(f"Máy tính bảng sắp hết còn {so_luong_may_tinh_bang} sản phẩm)")
+    elif lua_chon == "5":
+        print("Thoát chương trình...")
+        break
+    else:
+        print("Lựa chọn không hợp lệ, vui lòng nhập lại!")
